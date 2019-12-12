@@ -13,14 +13,33 @@ def batch_badge_creator(names)
 end
 
 # binding.pry
+
 def assign_rooms(speakers)
-    new_array = []
     speakers.each_with_index.collect do |name, room|
-        new_array.push("Hello, #{name}! You'll be assigned to room #{room+=1}!")
+        "Hello, #{name}! You'll be assigned to room #{room+=1}!"
     end
-    new_array = []
 end
 
-def printer
+# def printer(attendees)
+#     badges = batch_badge_creator(attendees)   
+#     rooms = assign_rooms 
+#     badges.each do |name|
+#         puts name
+#     end
+    
+# end
 
-end
+def printer(attendees)
+    ## iterate through badges and print them all
+    badges = batch_badge_creator(attendees)
+    badges.each do |badge|
+        puts badge
+        
+    end
+  
+    ## iterate through rooms and print them all
+    rooms = assign_rooms(attendees)
+    rooms.each do |room_number|
+        puts room_number
+    end
+  end
